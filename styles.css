@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#outer-layout {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+#results {
+    border: 1px solid black;
+    width: 400px;
+    height: 50px;
+}
