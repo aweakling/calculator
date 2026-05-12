@@ -33,6 +33,15 @@ body {
     padding: 5px;
     font-size: large;
     font-weight: bold;
+    text-align: right;
+}
+
+.key.operator {
+    background-color: orange;
+}
+
+.key.clear {
+    background-color: crimson;
 }
 
 .buttons {
@@ -48,4 +57,5 @@ body {
     aspect-ratio: 1 / 1;
     background-color: blanchedalmond;
     border-radius: 10px;
+    font-weight: bold;
 }
