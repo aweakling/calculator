@@ -21,12 +21,13 @@ function operate (input) {
         secondNum = "";
         operator = "";
 
-    } else if (input === "+" || input === "-" || input === "*" || input === "/" ) {
+    } else if (input === "+" || input === "-" || input === "x" || input === "/" ) {
         operator = input;
 
         firstNum = outputDisplay.value;
 
         outputDisplay.value = "";
+
     } else if (input === "=") {
         secondNum = outputDisplay.value;
 
@@ -36,7 +37,7 @@ function operate (input) {
         if (operator === "-") {
             outputDisplay.value = Number(firstNum) - Number(secondNum);
         }
-        if (operator === "*") {
+        if (operator === "x") {
             outputDisplay.value = Number(firstNum) * Number(secondNum);
         }
         if (operator === "/") {
