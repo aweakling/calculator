@@ -30,6 +30,9 @@ body {
 #display {
     width: 275px;
     height: 60px;
+    padding: 5px;
+    font-size: large;
+    font-weight: bold;
 }
 
 .buttons {

@@ -1,10 +1,10 @@
 const buttons = document.querySelectorAll(".key");
-const outputDisplay = document.querySelectorAll("#display");
+const outputDisplay = document.querySelector("#display");
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
-        const keyValue = button.value;
+        const keyValue = button.textContent;
         console.log(keyValue);
-        outputDisplay.innerText = "Output: " + keyValue;
+        outputDisplay.value += keyValue;
     });
 });
