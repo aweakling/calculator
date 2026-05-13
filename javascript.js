@@ -4,6 +4,8 @@ const outputDisplay = document.querySelector("#display");
 let firstNum = "";
 let secondNum = "";
 let operator = "";
+let result = 0;
+let lastWasOperator = false;
 let shouldResetDisplay = false;
 
 buttons.forEach(button => {
@@ -50,16 +52,8 @@ function operate (input) {
         if(firstNum === ""){
             firstNum = outputDisplay.value;
 
-        } else if(operator !== ""){
-
-            secondNum = outputDisplay.value.split(operator).pop();
-
-            firstNum = calculate(firstNum, secondNum, operator);
-           
-            outputDisplay.value = firstNum;
-
         }
-        
+
         operator = input;
 
         outputDisplay.value += input;
@@ -81,6 +75,4 @@ function operate (input) {
         operator = "";
         shouldResetDisplay = true;
     }
-
-    outputDisplay.value += input;
 }
