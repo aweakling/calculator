@@ -5,8 +5,6 @@ let firstNum = "";
 let secondNum = "";
 let operator = "";
 let result = 0;
-let lastWasOperator = false;
-let shouldResetDisplay = false;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -36,43 +34,6 @@ function operate (input) {
         return;
     } 
 
-    if(!isNaN(input)){
-
-        if(shouldResetDisplay){
-            outputDisplay.value = "";
-            shouldResetDisplay = false;
-        }
-
-        outputDisplay.value += input;
-        return;
-    }
-
-    if (["+", "-", "x", "/"].includes(input)) {
-        
-        if(firstNum === ""){
-            firstNum = outputDisplay.value;
-
-        }
-
-        operator = input;
-
-        outputDisplay.value += input;
-        return;
-    }
     
-    if (input === "=") {
-        
-        if(firstNum === "" || operator === "") return;
 
-        secondNum = outputDisplay.value.split(operator).pop().trim();
-
-        const result = calculate(firstNum, secondNum, operator);
-
-        outputDisplay.value = result;
-
-        firstNum = result;
-        secondNum = "";
-        operator = "";
-        shouldResetDisplay = true;
-    }
 }
