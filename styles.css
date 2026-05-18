@@ -22,7 +22,7 @@ body {
     border: 2px solid black;
     border-radius: 10px;
     width: 300px;
-    height: 380px;
+    height: 440px;
     padding: 10px;
     background-color: gray;
 }
@@ -38,6 +38,10 @@ body {
 
 .key.operator {
     background-color: orange;
+}
+
+.key.point {
+    flex-grow: 0;
 }
 
 .key.clear {

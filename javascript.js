@@ -4,16 +4,15 @@ const outputDisplay = document.querySelector("#display");
 let firstNum = "";
 let secondNum = "";
 let operator = "";
-let result = 0;
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const keyValue = button.textContent;
-        operate(keyValue);
+        calculate(keyValue);
     });
 });
 
-function calculate (num1, num2, operator) {
+function operate (num1, num2, operator) {
 
     num1 = Number(num1);
     num2 = Number(num2);
@@ -24,16 +23,33 @@ function calculate (num1, num2, operator) {
     if(operator === "/") return num1 / num2;
 }
 
-function operate (input) {
-    
+function calculate (input) {
+
     if(input === "C"){
         outputDisplay.value = "";
         firstNum = "";
         secondNum = "";
         operator = "";
         return;
-    } 
+    }
 
-    
+    if(input === "") return outputDisplay.value = " ";
 
+    if((["+", "-", "x","/"]).includes(input)){
+        firstNum = outputDisplay.value;
+        operator = input;
+        outputDisplay.value = "";
+        return;
+    }
+
+    if(input === "="){
+        secondNum = outputDisplay.value;
+
+        let result = operate(firstNum, secondNum, operator);
+
+        outputDisplay.value = result;
+        return;
+    }
+
+    outputDisplay.value += input;
 }
